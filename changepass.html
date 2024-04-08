@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="changepass.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Change Your Password</h1>
+
+        <div class="newpass">
+            <ul>
+                <li class="n1">New Password <input type="password" placeholder="Enter New Password" id="pass"><span
+                        id="pass1">Enter
+                        new password</span></li><br>
+                <li class="n1">Confirm Password <input type="password" placeholder="Confirm Password" id="conpass"><span
+                        id="conpass1">Enter Confirm Password</span></li><br>
+            </ul>
+        </div>
+
+        <button class="btn" onclick="myfun()">Submit</button>
+
+    </div>
+
+    <script>
+
+        function myfun() {
+            const passw = document.getElementById('pass').value;
+            const conpassw = document.getElementById('conpass').value;
+
+
+            if (passw === "" || passw === null) {
+                document.getElementById('pass1').style.display = "inline";
+                document.getElementById('pass1').style.color = "red";
+            }
+            else {
+                document.getElementById('pass1').style.display = "none";
+            }
+
+
+            if (conpassw === "" || conpassw === null) {
+                document.getElementById('conpass1').style.display = "inline";
+                document.getElementById('conpass1').style.color = "red";
+            }
+            else if (conpassw !== passw) {
+                document.getElementById('conpass1').innerHTML = "It is not same to New Password";
+                document.getElementById('conpass1').style.color = "red";
+            }
+            else {
+
+                document.getElementById('conpass1').style.display = "none";
+                document.write('change password successfully');
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
